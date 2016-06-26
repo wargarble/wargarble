@@ -1,3 +1,5 @@
+/* eslint no-new: 0 */
+
 // Styles
 import 'styles/main.less';
 
@@ -11,9 +13,12 @@ import LoadingScreen from 'scripts/components/loading.js';
 const Main = {
   init() {
     const params = Params.decode(location.search.replace(/\?/, ''));
-    if (params.splash) {
-      const loader = new LoadingScreen();
-      console.log(loader);
+    if (params.splash || !JSON.parse(localStorage.get('wargarble')).hasSeenSplash) {
+      localStorage.set(JSON.stringify({
+        hasSeenSplash: true,
+      }));
+
+      new LoadingScreen();
     }
   },
 };
