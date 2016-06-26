@@ -1,0 +1,128 @@
+@black: rgba(30, 30, 30, 1);
+@white: rgba(223,226,245, 0.99);
+
+.padding {
+  padding: 2px 3px 3px;
+}
+
+.active {
+  text-shadow: 0px 1px 1px fade(@black, 50%);
+  background-color: @white;
+  color: @black;
+  display: inline-block;
+  .padding;
+}
+
+.arrow {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid @white;
+    left: -20px;
+    top: 2px;
+  }
+}
+
+body {
+  background-color: @black;
+  color: @white;
+  text-shadow: 0 0 3px fade(@white, 50%);
+  font-weight: 300;
+  font-size: 14px;
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 50px;
+}
+
+a {
+  display: inline-block;
+  color: @white;
+  opacity: 0.6;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-weight: 400;
+}
+
+.loading {
+  background-color: @black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: opacity 500ms ease;
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &-asset {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+
+    &.is-visible {
+      visibility: visible;
+    }
+  }
+
+  .logo {
+    max-width: 75px;
+    margin: 0 auto;
+  }
+}
+
+.header {
+  h1 {
+    font-size: 17px;
+    .active;
+  }
+
+  a {
+    opacity: 1;
+  }
+}
+
+.nav {
+  padding-left: 20px;
+
+  a {
+    opacity: 1;
+    .padding;
+
+    &:hover {
+      .active;
+      .arrow;
+    }
+  }
+}
+
+.main {
+  max-width: 40em;
+  margin-top: 150px;
+
+  p {
+    margin: 30px 0;
+  }
+}
+
+.album {
+  h1 {
+    font-style: italic;
+  }
+}
