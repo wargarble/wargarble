@@ -68,7 +68,12 @@
 	var Main = {
 	  init: function init() {
 	    var params = _queryParams2.default.decode(location.search.replace(/\?/, ''));
-	    if (params.splash || !JSON.parse(localStorage.getItem('wargarble')).hasSeenSplash) {
+	    var storage = JSON.parse(localStorage.getItem('wargarble'));
+	    if (!storage) {
+	      storage = {};
+	    }
+
+	    if (params.splash || storage.hasSeenSplash) {
 	      localStorage.setItem(JSON.stringify({
 	        hasSeenSplash: true
 	      }));
