@@ -13,8 +13,8 @@ import LoadingScreen from 'scripts/components/loading.js';
 const Main = {
   init() {
     const params = Params.decode(location.search.replace(/\?/, ''));
-    if (params.splash || !JSON.parse(localStorage.get('wargarble')).hasSeenSplash) {
-      localStorage.set(JSON.stringify({
+    if (params.splash || !JSON.parse(localStorage.getItem('wargarble')).hasSeenSplash) {
+      localStorage.setItem(JSON.stringify({
         hasSeenSplash: true,
       }));
 
