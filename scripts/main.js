@@ -60,15 +60,20 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	/* eslint no-new: 0 */
+
 	// Styles
 
 
 	var Main = {
 	  init: function init() {
 	    var params = _queryParams2.default.decode(location.search.replace(/\?/, ''));
-	    if (params.splash) {
-	      var loader = new _loading2.default();
-	      console.log(loader);
+	    if (params.splash || !JSON.parse(localStorage.get('wargarble')).hasSeenSplash) {
+	      localStorage.set(JSON.stringify({
+	        hasSeenSplash: true
+	      }));
+
+	      new _loading2.default();
 	    }
 	  }
 	};
