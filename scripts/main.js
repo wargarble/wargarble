@@ -18,8 +18,8 @@ const Main = {
       storage = {};
     }
 
-    if (params.splash || storage.hasSeenSplash) {
-      localStorage.setItem(JSON.stringify({
+    if (params.splash || !storage.hasSeenSplash) {
+      localStorage.setItem('wargarble', JSON.stringify({
         hasSeenSplash: true,
       }));
 
