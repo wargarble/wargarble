@@ -58,15 +58,22 @@
 
 	var _loading2 = _interopRequireDefault(_loading);
 
+	var _nav = __webpack_require__(8);
+
+	var _nav2 = _interopRequireDefault(_nav);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/* eslint no-new: 0 */
+	// Components
 
-	// Styles
+
+	// Polyfills & Libs
 
 
 	var Main = {
 	  init: function init() {
+	    _nav2.default.init();
+
 	    var params = _queryParams2.default.decode(location.search.replace(/\?/, ''));
 	    var storage = JSON.parse(localStorage.getItem('wargarble'));
 	    if (!storage) {
@@ -81,12 +88,9 @@
 	      new _loading2.default();
 	    }
 	  }
-	};
+	}; /* eslint no-new: 0 */
 
-	// Components
-
-
-	// Polyfills & Libs
+	// Styles
 
 
 	if (document.readyState === 'complete' || document.readyState === 'interactive') {
@@ -130,7 +134,7 @@
 
 
 	// module
-	exports.push([module.id, ".padding {\n  padding: 2px 3px 3px;\n}\n.active {\n  text-shadow: 0px 1px 1px rgba(30, 30, 30, 0.5);\n  background-color: rgba(223, 226, 245, 0.99);\n  color: #1e1e1e;\n  display: inline-block;\n  padding: 2px 3px 3px;\n}\n.arrow {\n  position: relative;\n}\n.arrow::before {\n  content: '';\n  display: block;\n  position: absolute;\n  border-top: 8px solid transparent;\n  border-bottom: 8px solid transparent;\n  border-left: 8px solid rgba(223, 226, 245, 0.99);\n  left: -20px;\n  top: 2px;\n}\nbody {\n  background-color: #1e1e1e;\n  color: rgba(223, 226, 245, 0.99);\n  text-shadow: 0 0 3px rgba(223, 226, 245, 0.5);\n  font-weight: 300;\n  font-size: 14px;\n  font-family: 'Press Start 2P', monospace;\n  line-height: 1.5em;\n  margin: 0;\n  padding: 50px;\n}\na {\n  display: inline-block;\n  color: rgba(223, 226, 245, 0.99);\n  opacity: 0.6;\n  text-decoration: none;\n}\na:hover {\n  opacity: 1;\n}\nh1 {\n  font-weight: 400;\n}\n.loading {\n  background-color: #1e1e1e;\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  transition: opacity 500ms ease;\n}\n.loading.is-hidden {\n  opacity: 0;\n  pointer-events: none;\n}\n.loading-asset {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  visibility: hidden;\n}\n.loading-asset.is-visible {\n  visibility: visible;\n}\n.loading .logo {\n  max-width: 75px;\n  margin: 0 auto;\n}\n.header h1 {\n  font-size: 17px;\n  text-shadow: 0px 1px 1px rgba(30, 30, 30, 0.5);\n  background-color: rgba(223, 226, 245, 0.99);\n  color: #1e1e1e;\n  display: inline-block;\n  padding: 2px 3px 3px;\n}\n.header a {\n  opacity: 1;\n}\n.nav {\n  padding-left: 20px;\n}\n.nav a {\n  opacity: 1;\n  padding: 2px 3px 3px;\n}\n.nav a:hover {\n  text-shadow: 0px 1px 1px rgba(30, 30, 30, 0.5);\n  background-color: rgba(223, 226, 245, 0.99);\n  color: #1e1e1e;\n  display: inline-block;\n  padding: 2px 3px 3px;\n  position: relative;\n}\n.nav a:hover::before {\n  content: '';\n  display: block;\n  position: absolute;\n  border-top: 8px solid transparent;\n  border-bottom: 8px solid transparent;\n  border-left: 8px solid rgba(223, 226, 245, 0.99);\n  left: -20px;\n  top: 2px;\n}\n.main {\n  max-width: 40em;\n  margin-top: 150px;\n}\n.main p {\n  margin: 30px 0;\n}\n.album h1 {\n  font-style: italic;\n}\n", ""]);
+	exports.push([module.id, ".padding {\n  padding: 2px 3px 3px;\n}\n.active {\n  text-shadow: 0px 1px 1px rgba(30, 30, 30, 0.5);\n  background-color: rgba(223, 226, 245, 0.99);\n  color: #1e1e1e;\n  display: inline-block;\n  padding: 2px 3px 3px;\n}\n.arrow {\n  position: relative;\n}\n.arrow::before {\n  content: '';\n  display: block;\n  position: absolute;\n  border-top: 8px solid transparent;\n  border-bottom: 8px solid transparent;\n  border-left: 8px solid rgba(223, 226, 245, 0.99);\n  left: -20px;\n  top: 2px;\n}\nbody {\n  background-color: #1e1e1e;\n  color: rgba(223, 226, 245, 0.99);\n  text-shadow: 0 0 3px rgba(223, 226, 245, 0.5);\n  font-weight: 300;\n  font-size: 14px;\n  font-family: 'Press Start 2P', monospace;\n  line-height: 1.5em;\n  margin: 0;\n  padding: 50px;\n}\na {\n  display: inline-block;\n  color: rgba(223, 226, 245, 0.99);\n  opacity: 0.6;\n  text-decoration: none;\n}\na:hover {\n  opacity: 1;\n}\nh1 {\n  font-weight: 400;\n}\n.loading {\n  background-color: #000;\n  position: fixed;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  transition: opacity 500ms ease;\n}\n.loading.is-hidden {\n  opacity: 0;\n  pointer-events: none;\n}\n.loading-asset {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  visibility: hidden;\n}\n.loading-asset.is-visible {\n  visibility: visible;\n}\n.loading .logo {\n  max-width: 75px;\n  margin: 0 auto;\n}\n.header h1 {\n  font-size: 17px;\n  text-shadow: 0px 1px 1px rgba(30, 30, 30, 0.5);\n  background-color: rgba(223, 226, 245, 0.99);\n  color: #1e1e1e;\n  display: inline-block;\n  padding: 2px 3px 3px;\n}\n.header a {\n  opacity: 1;\n}\n.nav {\n  padding-left: 20px;\n}\n.nav a {\n  opacity: 1;\n  padding: 2px 3px 3px;\n}\n.nav a.is-active,\n.nav a:hover {\n  text-shadow: 0px 1px 1px rgba(30, 30, 30, 0.5);\n  background-color: rgba(223, 226, 245, 0.99);\n  color: #1e1e1e;\n  display: inline-block;\n  padding: 2px 3px 3px;\n  position: relative;\n}\n.nav a.is-active::before,\n.nav a:hover::before {\n  content: '';\n  display: block;\n  position: absolute;\n  border-top: 8px solid transparent;\n  border-bottom: 8px solid transparent;\n  border-left: 8px solid rgba(223, 226, 245, 0.99);\n  left: -20px;\n  top: 2px;\n}\n.main {\n  max-width: 40em;\n  margin-top: 150px;\n}\n.main p {\n  margin: 30px 0;\n}\n.album h1 {\n  font-style: italic;\n}\n", ""]);
 
 	// exports
 
@@ -571,6 +575,83 @@
 	}();
 
 	exports.default = Loading;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var keys = ['ArrowDown', 'ArrowUp'];
+
+	exports.default = {
+	  init: function init() {
+	    this.$nav = document.querySelector('.nav');
+	    this.$links = document.querySelectorAll('.nav a');
+
+	    this.bindUI();
+	  },
+	  bindUI: function bindUI() {
+	    var _this = this;
+
+	    document.addEventListener('keydown', function (e) {
+	      if (keys.indexOf(e.key) > -1) {
+	        e.preventDefault();
+	        _this.handleArrow(e.key);
+	      }
+	    });
+	  },
+	  handleArrow: function handleArrow(key) {
+	    if (key === 'ArrowDown') {
+	      this.next();
+	    } else if (key === 'ArrowUp') {
+	      this.prev();
+	    }
+	  },
+	  next: function next() {
+	    var active = this.$nav.querySelector('.is-active');
+	    var el = void 0;
+
+	    if (active) {
+	      var index = this.$links.indexOf(active);
+
+	      active.classList.remove('is-active');
+
+	      if (this.$links[index + 1]) {
+	        el = this.$links[index + 1];
+	      }
+	    }
+
+	    if (!el) {
+	      el = this.$links[0];
+	    }
+
+	    el.classList.add('is-active');
+	  },
+	  prev: function prev() {
+	    var active = this.$nav.querySelector('.is-active');
+	    var el = void 0;
+
+	    if (active) {
+	      var index = this.$links.indexOf(active);
+
+	      active.classList.remove('is-active');
+
+	      if (this.$links[index - 1]) {
+	        el = this.$links[index - 1];
+	      }
+	    }
+
+	    if (!el) {
+	      el = this.$links[this.$links.length - 1];
+	    }
+
+	    el.classList.add('is-active');
+	  }
+	};
 
 /***/ }
 /******/ ]);
