@@ -5,8 +5,9 @@ const keys = [
 
 export default {
   init() {
+    this.$header = document.querySelector('.header');
     this.$nav = document.querySelector('.nav');
-    this.$links = document.querySelectorAll('.nav a');
+    this.$links = document.querySelectorAll('.header a, .nav a');
 
     this.bindUI();
   },
@@ -29,44 +30,37 @@ export default {
   },
 
   next() {
-    const active = this.$nav.querySelector('.is-active');
-    let el;
-
-    if (active) {
-      const index = this.$links.indexOf(active);
-
-      active.classList.remove('is-active');
-
-      if (this.$links[index + 1]) {
-        el = this.$links[index + 1];
-      }
-    }
-
-    if (!el) {
-      el = this.$links[0];
-    }
-
-    el.classList.add('is-active');
+    this.increment('next');
   },
 
   prev() {
-    const active = this.$nav.querySelector('.is-active');
+    this.increment('prev');
+  },
+
+  increment(direction) {
+    const active = this.$header.querySelector('.is-active');
     let el;
 
     if (active) {
-      const index = this.$links.indexOf(active);
+      let index = this.$links.indexOf(active);
+      index = direction === 'next' ? index + 1 : index - 1;
 
       active.classList.remove('is-active');
 
-      if (this.$links[index - 1]) {
-        el = this.$links[index - 1];
+      if (this.$links[index]) {
+        el = this.$links[index];
       }
     }
 
     if (!el) {
-      el = this.$links[this.$links.length - 1];
+      if (direction === 'next') {
+        el = this.$links[0];
+      } else {
+        el = this.$links[this.$links.length - 1];
+      }
     }
 
     el.classList.add('is-active');
+    el.focus();
   },
 };

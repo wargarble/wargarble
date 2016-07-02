@@ -1,4 +1,4 @@
-@black: rgba(30, 30, 30, 1);
+@black: rgba(0, 0, 0, 1);
 @white: rgba(223,226,245, 0.99);
 
 .padding {
@@ -89,12 +89,25 @@ h1 {
 
 .header {
   h1 {
+    margin: 0;
     font-size: 17px;
-    .active;
+    .padding;
   }
 
   a {
     opacity: 1;
+    .padding;
+
+    &.is-active,
+    &:hover,
+    &:focus {
+      outline: none;
+
+      h1 {
+        color: @black;
+        .active;
+      }
+    }
   }
 }
 
