@@ -5,7 +5,8 @@
   "scripts": {
     "watch": "webpack --config webpack.config.js --progress --colors --watch",
     "build": "PROD_ENV=1 webpack --config webpack.config.js",
-    "server": "node server"
+    "server": "node server",
+    "launch": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "query-params": "0.0.1"
