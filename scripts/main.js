@@ -9,9 +9,12 @@ import Params from 'query-params';
 
 // Components
 import LoadingScreen from 'scripts/components/loading.js';
+import Nav from 'scripts/components/nav.js';
 
 const Main = {
   init() {
+    Nav.init();
+
     const params = Params.decode(location.search.replace(/\?/, ''));
     let storage = JSON.parse(localStorage.getItem('wargarble'));
     if (!storage) {
