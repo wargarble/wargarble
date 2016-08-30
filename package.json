@@ -7,7 +7,7 @@
     "build": "PROD_ENV=1 webpack --config webpack.config.js",
     "server": "node server",
 		"build-static": "node create-static-site.js",
-    "launch": "git subtree push --prefix dist origin gh-pages"
+    "launch": "git push origin `git subtree split --prefix dist master`:gh-pages --force"
   },
   "dependencies": {
     "query-params": "0.0.1"
