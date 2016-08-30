@@ -6,6 +6,7 @@
     "watch": "webpack --config webpack.config.js --progress --colors --watch",
     "build": "PROD_ENV=1 webpack --config webpack.config.js",
     "server": "node server",
+		"build-static": "node create-static-site.js",
     "launch": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
