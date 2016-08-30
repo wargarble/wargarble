@@ -46,13 +46,13 @@
 
 	'use strict';
 
-	__webpack_require__(1);
-
-	__webpack_require__(5);
-
 	var _queryParams = __webpack_require__(6);
 
 	var _queryParams2 = _interopRequireDefault(_queryParams);
+
+	__webpack_require__(5);
+
+	__webpack_require__(1);
 
 	var _loading = __webpack_require__(7);
 
@@ -65,11 +65,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Components
-
-
-	// Polyfills & Libs
-
-
 	var Main = {
 	  init: function init() {
 	    _nav2.default.init();
@@ -88,9 +83,12 @@
 	      new _loading2.default();
 	    }
 	  }
-	}; /* eslint no-new: 0 */
+	};
 
 	// Styles
+	/* eslint no-new: 0 */
+
+	// Polyfills & Libs
 
 
 	if (document.readyState === 'complete' || document.readyState === 'interactive') {
@@ -515,6 +513,8 @@
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	/* eslint no-mixed-operators: 0 */
 
 	var duration = 300;
 
