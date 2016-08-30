@@ -1,15 +1,15 @@
 /* eslint no-new: 0 */
 
-// Styles
-import 'styles/main.less';
-
 // Polyfills & Libs
-import 'scripts/polyfills';
 import Params from 'query-params';
+import './polyfills';
+
+// Styles
+import '../styles/main.less';
 
 // Components
-import LoadingScreen from 'scripts/components/loading.js';
-import Nav from 'scripts/components/nav.js';
+import LoadingScreen from './components/loading.js';
+import Nav from './components/nav.js';
 
 const Main = {
   init() {

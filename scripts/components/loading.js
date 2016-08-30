@@ -1,3 +1,5 @@
+/* eslint no-mixed-operators: 0 */
+
 const duration = 300;
 
 const template = `
